@@ -1,0 +1,56 @@
+<div class="panel-body">
+    <div class="list-group">
+        <a ui-sref="dashboard.finishedTaskIndex.finishedTaskList" class="list-group-item" ng-show="finishedTaskFlagI">
+            <i class="fa fa-sticky-note fa-fw"></i> {{finishedTaskNumI}} 条已办任务！
+            <!--<span class="pull-right text-muted small"><em>4 minutes ago</em>-->
+            <!--</span>-->
+        </a>
+        <a ui-sref="{{agreementUrlI}}" class="list-group-item" ng-show="agreementFlagI">
+            <i class="fa fa-file-o fa-fw"></i> {{agreementNumI}} 条医疗废物处置协议！
+            <!--<span class="pull-right text-muted small"><em>12 minutes ago</em>-->
+            <!--</span>-->
+        </a>
+        <a ui-sref="{{planUrlI}}" class="list-group-item" ng-show="planFlagI">
+            <i class="fa fa-file-text fa-fw"></i> {{planNumI}} 条医疗废物转移计划！
+            <!--<span class="pull-right text-muted small"><em>27 minutes ago</em>-->
+            <!--</span>-->
+        </a>
+        <a ui-sref="dashboard.haulIndex.haulList" class="list-group-item" ng-show="hualFlagI">
+            <i class="fa fa-list-alt fa-fw"></i> {{hualNumI}} 条转移行程！
+            <!--<span class="pull-right text-muted small"><em>43 minutes ago</em>-->
+            <!--</span>-->
+        </a>
+        <a ui-sref="dashboard.billCsIndex.billCsList" class="list-group-item" ng-show="billFlagI">
+            <i class="fa fa-th-list fa-fw"></i> {{billNumI}} 条转移运单！
+            <!--<span class="pull-right text-muted small"><em>43 minutes ago</em>-->
+            <!--</span>-->
+        </a>
+        <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-upload fa-fw"></i> Server Rebooted-->
+            <!--&lt;!&ndash;<span class="pull-right text-muted small"><em>11:32 AM</em>&ndash;&gt;-->
+            <!--&lt;!&ndash;</span>&ndash;&gt;-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-bolt fa-fw"></i> Server Crashed!-->
+            <!--<span class="pull-right text-muted small"><em>11:13 AM</em>-->
+            <!--</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-warning fa-fw"></i> Server Not Responding-->
+            <!--<span class="pull-right text-muted small"><em>10:57 AM</em>-->
+            <!--</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-shopping-cart fa-fw"></i> New Order Placed-->
+            <!--<span class="pull-right text-muted small"><em>9:49 AM</em>-->
+            <!--</span>-->
+        <!--</a>-->
+        <!--<a href="#" class="list-group-item">-->
+            <!--<i class="fa fa-money fa-fw"></i> Payment Received-->
+            <!--<span class="pull-right text-muted small"><em>Yesterday</em>-->
+            <!--</span>-->
+        <!--</a>-->
+    </div>
+    <!-- /.list-group -->
+    <!--<a href="#" class="btn btn-default btn-block">查看更多</a>-->
+</div>

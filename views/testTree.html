@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Tree</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                test tree
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <button ng-click="test()">11111</button>
+                <treecontrol class="tree-light"
+                   tree-model="dataForTheTree"
+                   options="treeOptions"
+                   on-selection="showSelected(node)"
+                   selected-node="node1">
+                   employee: {{node.name}} age {{node.age}}
+                </treecontrol>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>

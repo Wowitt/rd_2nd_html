@@ -1,0 +1,62 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">医疗废物处置协议信息</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <!-- /.panel -->
+        <div class="col-lg-6">
+            <form role="form" >
+                <!-- /.panel-heading -->
+                <div class="form-group">
+                    <label>医疗废物处置协议编号：</label>
+                    <label id="AM_ID" name="AM_ID" ng-model="AM_ID" style="font-weight: normal;">{{AM_ID}}</label>
+                </div>
+                <div class="form-group">
+                    <label>拟送交的医疗废物处置单位：</label>
+                    <label id="EN_NAME_CZ" name="EN_NAME_CZ" ng-model="EN_NAME_CZ" style="font-weight: normal;">{{EN_NAME_CZ}}</label>
+                </div>
+                <div class="form-group">
+                    <label>拟送交的医疗废物中转单位：</label>
+                    <label id="EN_NAME_ZZ" name="EN_NAME_ZZ" ng-model="EN_NAME_ZZ" style="font-weight: normal;">{{EN_NAME_ZZ}}</label>
+                </div>
+                <div class="form-group">
+                    <label>下一年度计划转移医疗废物数量：</label>
+                    <label id="UNIT_NUM" name="UNIT_NUM" ng-model="UNIT_NUM" style="font-weight: normal;">{{UNIT_NUM}}公斤</label>
+                </div>
+                <div class="form-group">
+                    <label>医疗废物委托处置协议开始时间：</label>
+                    <label id="BEGINTIME" name="BEGINTIME" ng-model="BEGINTIME" style="font-weight: normal;">{{BEGINTIME}}</label>
+                </div>
+                <div class="form-group">
+                    <label>医疗废物委托处置协议结束时间：</label>
+                    <label id="ENDTIME" name="ENDTIME" ng-model="ENDTIME" style="font-weight: normal;">{{ENDTIME}}</label>
+                </div>
+                <div class="form-group">
+                    <label>联系人：</label>
+                    <label id="LINKMAN" name="LINKMAN" ng-model="LINKMAN" style="font-weight: normal;">{{LINKMAN}}</label>
+                </div>
+                <div class="form-group">
+                    <label>联系人座机：</label>
+                    <label id="LINKTEL" name="LINKTEL" ng-model="LINKTEL" style="font-weight: normal;">{{LINKTEL}}</label>
+                </div>
+                <div class="form-group">
+                    <label>联系人手机：</label>
+                    <label id="LINKPHONE" name="LINKPHONE" ng-model="LINKPHONE" style="font-weight: normal;">{{LINKPHONE}}</label>
+                </div>
+                <div class="form-group" ng-show="reasonFlag">
+                    <label>驳回原因：</label>
+                    <label id="REASON" name="REASON" ng-model="REASON" style="font-weight: normal;">{{REASON}}</label>
+                </div>
+            </form>
+            <div style="margin-bottom: 15px;">
+                <button class="btn btn-default" ng-click="back();" id="backBtn">返回</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

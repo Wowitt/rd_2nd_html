@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">菜单维护</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <!-- /.panel-heading -->
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <style>
+                                        .c-li {margin-top:8px;}
+                                        .c-liSelected {margin-right: 5px}
+                                        .c-iExpanded {margin-right: 5px}
+                                        .c-iCollapsed {margin-right: 5px}
+                                        .c-iLeaf {margin-right: 5px}
+                                        treecontrol.tree-classic li .tree-label.c-label {margin-right: 5px}
+                                        treecontrol.tree-classic li .tree-selected.c-labelSelected {margin-right: 5px}
+                                    </style>
+                                    <treecontrol class="tree-light"
+                                                 tree-model="menuTree"
+                                                 options="menuTreeOptions"
+                                                 on-selection="showSelected(node)"
+                                                 selected-node="nodeSelected"
+                                                 expanded-nodes="expandedNodes">
+                                        <span ng-switch="" on="node.type" style="margin-right: 5px;">
+                                             <span ng-switch-when="folder" class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+                                             <span ng-switch-when="pic" class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+                                             <span ng-switch-when="doc" class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                                             <span ng-switch-when="file" class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                                             <span ng-switch-when="movie" class="glyphicon glyphicon-film" aria-hidden="true"></span>
+                                             <span ng-switch-when="email" class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                             <span ng-switch-when="home" class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                             <span ng-switch-when="trash" class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                         </span>
+                                        {{node.name}}
+                                    </treecontrol>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-6" >
+                        <form role="form">
+                            <!-- /.panel-heading -->
+                            <div class="form-group">
+                                <h4>维护菜单</h4>
+                            </div>
+                            <div class="form-group">
+                                <label>菜单名称</label>
+                                <input class="form-control" ng-model="menuName" name="menuName" placeholder="至少输入一个中文或英文字母"/>
+                            </div>
+                            <div class="form-group">
+                                <label>状态</label>
+                                <select ng-model="status" id="status" ng-options="x.type for x in menuStatus" class="form-control" >
+                                </select>
+                            </div>
+                        </form>
+                        <div>
+                            <button class="btn btn-primary" ng-click="save();">保存</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<!-- Modal -->

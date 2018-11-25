@@ -1,0 +1,133 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">单位信息维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row" ng-model="epInfo">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label>单位全称</label>
+                <input id="epName" class="form-control" placeholder="请输入单位全称（必填）" name="epName" type="text"
+                       ng-model="epName">
+            </div>
+            <div class="form-group">
+                <label>统一社会信用代码</label>
+                <input id="epCode" class="form-control" placeholder="请输入统一社会信用代码（必填）" name="epCode" type="text"
+                       ng-model="epCode">
+            </div>
+            <div class="form-group">
+                <label>所属环保局</label>
+                <select ng-model="belongSepa" id="belongSepa" ng-options="x.area for x in hbjList" class="form-control">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>法人</label>
+                <input id="linkMan" class="form-control" placeholder="请输入法人（必填）" name="linkMan" type="text"
+                       ng-model="linkMan">
+            </div>
+            <div class="form-group">
+                <label>联系人</label>
+                <input id="contancts" class="form-control" placeholder="请输入联系人（必填）" name="contancts" type="text"
+                       ng-model="contancts">
+            </div>
+            <div class="form-group">
+                <label>座机号码</label>
+                <input id="tel" class="form-control" placeholder="区号和电话号之前用“-”隔开（必填）" name="tel" type="text"
+                       ng-model="tel">
+            </div>
+            <div class="form-group">
+                <label>手机号</label>
+                <input id="mobilephone" class="form-control" placeholder="请输入手机号（必填）" name="mobilephone" type="text"
+                       ng-model="mobilephone">
+            </div>
+            <div class="form-group">
+                <label>邮政编码</label>
+                <input id="postalCode" class="form-control" placeholder="请输入邮政编码（必填）" name="postalCode" type="text"
+                       ng-model="postalCode">
+            </div>
+            <div class="form-group">
+                <label>邮箱地址</label>
+                <input id="eMail" class="form-control" placeholder="请输入邮箱地址（必填）" name="eMail" type="text"
+                       ng-model="eMail">
+            </div>
+            <div class="form-group">
+                <label>经度</label>
+                <input id="longitude" class="form-control" placeholder="请输入经度（必填，如：XX.XX）" name="longitude" type="float"
+                       ng-model="longitude">
+            </div>
+            <div class="form-group">
+                <label>纬度</label>
+                <input id="latitude" class="form-control" placeholder="请输入纬度（必填，如：XX.XX）" name="latitude" type="float"
+                       ng-model="latitude">
+            </div>
+            <div class="form-group">
+                <label>单位地址</label>
+
+                <div class="form-group">
+                    <select ng-model="belongCity" id="belongCity" ng-options="x.city for x in cities"
+                            class="form-control" style="width: 27%; float: left; margin-right: 5%;">
+                    </select>
+                    <select ng-model="belongArea" id="belongArea" ng-options="x.area for x in areas"
+                            class="form-control" style="width: 27%; float: left; margin-right: 5%;">
+                    </select>
+                    <textarea ng-model="belongStreet" id="belongStreet" placeholder="街道（必填，如复康路17号）"
+                              style="width: 36%; resize: none;"></textarea>
+                </div>
+            </div>
+            <div class="form-group" ng-hide="carFlag">
+                <label>医疗机构等级</label>
+                <select ng-model="step" id="step" ng-options="x.grade for x in hospitalGradeList" class="form-control">
+                </select>
+            </div>
+            <div class="form-group" ng-hide="carFlag">
+                <label>是否是中转机构</label>&nbsp;&nbsp;
+                <label>
+                    <!--
+                    有两个radio标签，必须有相同的name才能实现二选一的效果
+                    通过ng-value里不同的值，实现选择不同radio有不同值。然后两个radio又绑定着相同的数据模型，这样就可以实现当选择不同的radio时，绑定的数据模型变量会有不同的值。
+                    -->
+                    <input type="radio" ng-value=true ng-model="orgType" name="orgType" ng-checked="orgCheckT"
+                           ng-change="orgTypeChange('true');" id="orgTypeT">是
+                </label>&nbsp;&nbsp;
+                <label>
+                    <input type="radio" ng-value=false ng-model="orgType" name="orgType" ng-checked="orgCheckF"
+                           ng-change="orgTypeChange('false');" id="orgTypeF">否
+                </label>
+            </div>
+            <div class="form-group" ng-show="orgTypeFlag">
+                <label>是否需要中转机构转移废物</label>&nbsp;&nbsp;
+                <input type="checkbox" ng-model="belongOrgFlag" ng-checked="belongOrgFlag"
+                       ng-change="belongOrgChange(belongOrgFlag);" id="belongOrgFlag"><span>是</span>
+            </div>
+            <div class="form-group" ng-show="belongOrgFlag">
+                <label>转移废物中转机构</label>
+
+                <div class="form-group">
+                    <select ng-model="orgBelongSepa" id="orgBelongSepa" ng-options="x.area for x in areas"
+                            class="form-control" style="width: 47%; float: left; margin-right: 5%;" ng-change="selectBelongOrgSepa();">
+                    </select>
+                    <select ng-model="belongOrg" id="belongOrg" ng-options="x.orgName for x in belongOrgs"
+                            class="form-control" style="width: 48%;">
+                    </select>
+                </div>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-default" ng-click="back();" id="backBtn" ng-show="backBtnFlag">返回</button>
+            <button class="btn btn-primary" ng-click="save();" id="saveBtn">保存</button>
+            <button class="btn btn-primary" ng-click="submit();" id="submitBtn">提交</button>
+            <button class="btn btn-primary" ng-click="check();" id="checkBtn" ng-show="checkBtnFlag">查看审批记录</button>
+            <button class="btn btn-primary" ng-click="checkHistory();" id="checkHistoryBtn" ng-show="historyFlag">
+                查看当前信息
+            </button>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>

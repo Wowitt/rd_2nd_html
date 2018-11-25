@@ -1,0 +1,84 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">首页</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row" ng-show="taskFlag">
+        
+        <stats number="{{taskNum}}" comments="条待办事项！" colour="primary" type="comments" goto="dashboard.unfinishedTaskIndex.unfinishedTaskList" ng-click="goto();"></stats>
+        <stats number="{{agreementNum}}" comments="条待确认处置协议！" colour="yellow" type="support" goto="dashboard.agreementIndexCz.agreementListCz" ng-show="agreementFlag"></stats>
+        <stats number="{{forgetPwdNum}}" comments="条忘记密码申请！" colour="green" type="support" goto="dashboard.forgetPwdApplyIndex.forgetPwdApplyList" ng-show="forgetPwdFlag"></stats>
+        <div class="col-lg-3 col-md-6 ng-isolate-scope" number="{{unSubmitPlanNum}}" comments="条未提交转移计划！" colour="red" type="comments" goto="#" ng-show="unSubmitPlanFlag">
+            <div class="panel panel-red">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <i class="fa fa-comments fa-5x"></i>
+                        </div>
+                        <div class="col-xs-9 text-right">
+                            <div class="huge ng-binding">{{unSubmitPlanNum}}</div>
+                            <div class="ng-binding">条未提交转移计划！</div>
+                        </div>
+                    </div>
+                </div>
+                <a>
+                    <div class="panel-footer">
+                        <span class="pull-left">请完善协议和计划</span>
+                        <span class="pull-right">
+                        </span>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- /.panel -->
+    <div class="row" ng-show="operatorFlag">
+        <div class="col-lg-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-clock-o fa-fw"></i> 业务流程指南
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="timeline" ng-repeat="item in business">
+                        <li class="{{item.li_class}}">
+                            <div class="timeline-badge {{item.div_class}}"><p style="font-size: 15px">{{item.step}}</p>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 class="timeline-title">{{item.title}}</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p>{{item.content}}</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4" ng-show="dataFlag">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bell fa-fw"></i> 统计数据
+                </div>
+                <!-- /.panel-heading -->
+                <notifications></notifications>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+
+             <!-- /.panel .chat-panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>

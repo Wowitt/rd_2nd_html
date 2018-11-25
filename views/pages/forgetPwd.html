@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="login-panel panel panel-default">
+                <br/>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>单位全称</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="epName" class="form-control" placeholder="请输入单位全称（必填）"
+                                               name="epName" type="text" ng-model="epName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>统一社会信用代码</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="orgCode" class="form-control" placeholder="请输入统一社会信用代码（必填）"
+                                               name="orgCode" type="text" ng-model="orgCode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>邮箱</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="mail" class="form-control" placeholder="请输入邮箱（必填）"
+                                               name="mail" type="text" ng-model="mail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>申请人姓名</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="name" class="form-control" placeholder="请输入申请人姓名（必填）" name="name"
+                                               type="text" ng-model="name">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <div style="text-align:center">
+                                <button class="btn btn-default" ng-click="back();">返回</button>
+                                <button class="btn btn-primary" ng-click="submit();" id="sureBtn">确认</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>

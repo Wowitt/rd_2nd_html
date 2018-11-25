@@ -1,0 +1,35 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">角色维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row " ng-model="epInfo">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <label style="height: 29px;padding: 6px 12px;">角色名称</label>
+                <input id="roleName" class="form-control" placeholder="" name="roleName" type="text" ng-model="roleName">
+            </div>
+            <div class="form-group"  ng-show="delFlag">
+                <label style="height: 29px;padding: 6px 12px;">状态</label>
+                <select ng-model="status" id="status" ng-options="x.name for x in statusList" class="form-control">
+                </select>
+            </div>
+        </div>
+        <!-- /.col-lg-8 -->
+    </div>
+    <!-- /.row -->
+    <br/><br/><br/><br/>
+    <div class="row">
+        <div class="col-lg-3">
+            <button class="btn btn-default" ng-click="back();" id="backBtn">返回</button>
+            <button class="btn btn-primary" ng-click="save();" id="saveBtn">保存</button>
+            <button class="btn btn-primary" ng-click="delete();" id="delBtn" ng-show="delFlag">删除</button>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</div>

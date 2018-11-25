@@ -1,0 +1,166 @@
+/* Space out content a bit */
+body {
+    padding-bottom: 20px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.nav>li.active>a {
+text-decoration: none;
+background-color: #eee;
+}
+
+.nav-pills>li+li {
+  margin-left: 0px;
+}
+.tab-font{
+  text-align: center;
+}
+.tab-width{
+  width: 33%;
+}
+.tab-width-two{
+  width: 34%;
+}
+.input-width{
+  float: right;
+  width: 50% !important;
+}
+.label-width{
+  width: 50%;
+}
+th, td {
+  white-space: nowrap;
+}
+div.dataTables_wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.divscroll {
+  border: solid 1px #dddddd;
+  height:100px;
+  overflow:scroll;
+  overflow-x: hidden;
+}
+.checkbox {
+  margin: 10px !important;
+}
+.my-alert{
+  padding: 5px 7px;
+  font-size: 12px;
+  margin: 0px 15px 15px 0px;
+}
+.panel-head{
+  padding: 15px 0px 0px 15px !important;
+}
+.checkbox-inline{
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+.checkbox-my{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.nav>li.active>a {
+  color: #337ab7;
+}
+/*datatables fixColumns css start*/
+.DTFC_LeftBodyLiner{
+  margin-top: -12px;
+}
+.DTFC_RightBodyLiner{
+  margin-top: -13px !important;
+  overflow-y: hidden !important;
+}
+.mytable-borderNone{
+  border-right: none !important;;
+}
+/*datatables fixColumns css end*/
+.paginate_button:hover{
+  color:white !important;
+  border:1px solid #fff !important;
+  background-color:#fff !important;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #fff)) !important;
+  background:-webkit-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background:-moz-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background:-ms-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background:-o-linear-gradient(top, #fff 0%, #fff 100%) !important;
+  background:linear-gradient(to bottom, #fff 0%, #fff 100%) !important;
+}
+
+.paginate_button{
+  padding: 0px !important;
+  margin: 5px !important;
+}

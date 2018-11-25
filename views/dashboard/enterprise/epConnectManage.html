@@ -1,0 +1,42 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{connectTitle}}信息维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row" ng-model="epInfo">
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-12">
+            <div class="dataTable_wrapper">
+                <label>{{connectTitle}}</label>
+                <table class="table table-bordered table-hover" id="connectTable">
+                    <tr ng-model="connectFlag">
+                        <th colspan="3"><a ng-click="connectAdd();" href="javascript:void(0);">添加</a></th>
+                    </tr>
+                    <tr>
+                        <th>名称</th>
+                        <th>类型</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="x in connectData">
+                        <th class=""><input type="text" id="connectNameT{{x.sort}}" class="form-control" value="{{x.connectName}}"></th>
+                        <th class="" ng-hide="personFlag"><input type="text" class='form-control' value="交接员" readonly="readonly"></th>
+                        <th class="" ng-show="personFlag"><select class='form-control selectTest' id="connectTypeT{{x.sort}}"><option value='0'>请选择</option><option value='1'>{{connectTitle}}</option><option value='2'>司机</option></select></th>
+                        <th ><a id="createCode" href="javascript:void(0);">生成二维码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="checkCode" href="javascript:void(0);">查看二维码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="delConnect" href="javascript:void(0);">删除</a></th>
+                        <th class="hideth"><input type="text" id="connectPersonIdT{{x.sort}}" class="form-control" value="{{x.personId}}"></th>
+                        <th class="hideth"><input type="text" id="connectCodePathT{{x.sort}}" class="form-control" value="{{x.codePath}}"></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button class="btn btn-primary" ng-click="save();" id="saveBtn">保存</button>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>

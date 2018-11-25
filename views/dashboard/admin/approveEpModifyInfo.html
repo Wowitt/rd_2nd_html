@@ -1,0 +1,102 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">医疗机构信息维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row " ng-model="epInfo">
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label>单位全称</label>
+                <input id="epName" class="form-control" placeholder="" name="epName" type="text" ng-model="epName" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>组织机构证</label>
+                <input id="epCode" class="form-control" placeholder="" name="epCode" type="text" ng-model="epCode" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>所属环保局</label>
+                <select ng-model="belongSepa" id="belongSepa" ng-options="x.area for x in hbjList" class="form-control" disabled="disabled">
+                </select>
+            </div>
+            <div class="form-group">
+                <label>法人</label>
+                <input id="linkMan" class="form-control" placeholder="" name="linkMan" type="text" ng-model="linkMan" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>联系人</label>
+                <input id="contancts" class="form-control" placeholder="" name="contancts" type="text" ng-model="contancts" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>座机号码</label>
+                <input id="tel" class="form-control" placeholder="" name="tel" type="text" ng-model="tel" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>手机号</label>
+                <input id="mobilephone" class="form-control" placeholder="" name="mobilephone" type="text" ng-model="mobilephone" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>邮政编码</label>
+                <input id="postalCode" class="form-control" placeholder="" name="postalCode" type="text" ng-model="postalCode" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>邮箱地址</label>
+                <input id="eMail" class="form-control" placeholder="" name="eMail" type="text" ng-model="eMail" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>经度</label>
+                <input id="longitude" class="form-control" placeholder="" name="longitude" type="text" ng-model="longitude" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>纬度</label>
+                <input id="latitude" class="form-control" placeholder="" name="latitude" type="text" ng-model="latitude" readonly="readonly">
+            </div>
+            <div class="form-group">
+                <label>单位地址</label><br/>
+                <div class="form-group" style="padding: 0;">
+                    <select ng-model="belongCity" id="belongCity" ng-options="x.city for x in cities" class="form-control" style="width: 25%; float: left; margin-right: 5%;" disabled="disabled">
+                    </select>
+                    <select ng-model="belongArea" id="belongArea" ng-options="x.area for x in areas" class="form-control" style="width: 25%; float: left; margin-right: 5%;" disabled="disabled">
+                    </select>
+                    <textarea ng-model="belongStreet" id="belongStreet" style="width: 40%; float: left; resize:none;" readonly="readonly"></textarea>
+                </div>
+            </div>
+            <div class="form-group" ng-show="showFlag">
+                <label>医疗机构等级</label>
+                <select ng-model="step" id="step" ng-options="x.grade for x in hospitalGradeList" class="form-control" disabled="disabled">
+                </select>
+            </div>
+            <div class="form-group" ng-show="showFlag">
+                <label>是否是中转机构</label>
+                <select ng-model="orgType" id="orgType" ng-options="x.type for x in orgTypes" class="form-control" disabled="disabled">
+                </select>
+            </div>
+            <div class="form-group" ng-show="showFlag1">
+                <label>转移废物中转机构</label>
+                <select ng-model="belongOrg" id="belongOrg" ng-options="x.orgName for x in belongOrgs" class="form-control" disabled="disabled">
+                </select>
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+    <br/>
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <button class="btn btn-default" ng-click="back();" id="backBtn">返回</button>
+                <button class="btn btn-primary" ng-click="disagree();" id="disagreeBtn" ng-show="approveBtnFlag">驳回</button>
+                <button class="btn btn-primary" ng-click="agree();" id="agreeBtn" ng-show="approveBtnFlag">同意</button>
+                <button class="btn btn-primary" ng-click="check();" id="checkBtn">查看审批记录</button>
+                <button class="btn btn-primary" ng-click="checkTransition();" id="checkTransitionBtn" ng-show="approveBtnFlag">查看当前信息</button>
+                <button class="btn btn-primary" ng-click="checkHistory();" id="checkHistoryBtn" ng-hide="approveBtnFlag">查看当前信息</button>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</div>

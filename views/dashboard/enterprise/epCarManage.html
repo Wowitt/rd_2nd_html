@@ -1,0 +1,45 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">车辆信息维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row" ng-model="epInfo">
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-12">
+            <div class="dataTable_wrapper">
+                <label>车辆（根据条件显示）</label>
+                <table class="table table-bordered table-hover" id="carTable">
+                    <tr ng-model="carFlag">
+                        <th colspan="5"><a ng-click="carAdd();" href="javascript:void(0);">添加</a></th>
+                    </tr>
+                    <tr>
+                        <th>牌照号</th>
+                        <th>车辆类型</th>
+                        <th>运输许可证号</th>
+                        <th>皮重（公斤）</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="x in carData">
+                        <th class=""><input type="text" id="carNumT{{x.sort}}" class="form-control" value="{{x.carNum}}"></th>
+                        <th class=""><select id="carTypeT{{x.sort}}" class="form-control"><option ng-repeat="ct in carType" value="{{ct.value}}">{{ct.name}}</option></select></th>
+                        <th class=""><input type="text" id="permitT{{x.sort}}" class="form-control" value="{{x.permit}}"></th>
+                        <th class=""><input type="text" id="tareT{{x.sort}}" class="form-control" value="{{x.tare}}"></th>
+                        <th style="width: 35%"><a id="createCode" href="javascript:void(0);">生成二维码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="checkCode" href="javascript:void(0);">查看二维码</a></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="delCar" href="javascript:void(0);">删除</a></th>
+                        <th class="hideth"><input type="text" id="carIdT{{x.sort}}" class="form-control" value="{{x.carId}}"></th>
+                        <th class="hideth"><input type="text" id="carCodePathT{{x.sort}}" class="form-control" value="{{x.codePath}}"></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button class="btn btn-primary" ng-click="save();" id="saveBtn">保存</button>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>

@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">角色-人员</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4></h4>
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <table class="table table-striped table-bordered table-hover" id="userTable">
+                        <thead>
+                        <tr>
+                            <th width="6%">选择</th>
+                            <th>人员ID</th>
+                            <th>人员编号</th>
+                            <th>人员名称</th>
+                            <th>单位id</th>
+                            <th>所属单位</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default" onclick="javascript: history.go(-1);">返回</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" ng-click="save();">保存</button>
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- Modal -->
+<div class="modal fade" id="promptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="width: 650px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel2">提示</h4>
+            </div>
+            <div class="modal-body">
+                <label id="modal_val"></label>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="ensure();">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="close();">关闭</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

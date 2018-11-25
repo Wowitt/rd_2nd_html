@@ -1,0 +1,201 @@
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav in" id="side-menu">
+            <sidebar-search></sidebar-search>
+            <li ng-repeat="item in menuList" item="item" ui-sref-active="active" ng-class="{active: collapseVar==$index+1}" ng-init="outerIndex = $index">
+                <a ng-if="item.SPAN_CLASS == ''" ui-sref="dashboard.{{item.A_ID}}" ui-sref-opts="{reload:true}" ng-click="check(outerIndex+1)"><i class="{{item.I_CLASS}}"></i> {{item.NAME}}</a>
+                <a ng-if="item.SPAN_CLASS != ''" href="" ng-click="check(outerIndex+1)"><i class="{{item.I_CLASS}}"></i> {{item.NAME}}<span class="{{item.SPAN_CLASS}}"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=outerIndex+1">
+                    <li ng-repeat="son in item.son" item="son" ui-sref-active="active">
+                        <a ui-sref="dashboard.{{son.A_ID}}" ui-sref-opts="{reload:true}" class="{{son.A_ID}}"><i class="{{son.I_CLASS}}"></i>{{son.NAME}}</a>
+                    </li>
+                </ul>
+            </li>
+            <button ng-show="false" style="margin-top: 50%; margin-left: 95%" class="newGuide" title="操作指引" data-container="body" data-toggle="popover" data-placement="right" data-content="请先点击此处完善单位信息，提交审批！">
+            </button>
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.index"><i class="fa fa-table fa-fw"></i>首页</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.epInfoManage"><i class="fa fa-table fa-fw"></i>单位信息维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.epAdminManage"><i class="fa fa-table fa-fw"></i>管理员信息维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.epConnectManage"><i class="fa fa-table fa-fw"></i>交接员信息维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.epCarManage"><i class="fa fa-table fa-fw"></i>车辆信息维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.agreementList"><i class="fa fa-table fa-fw"></i>医疗废物处置协议</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.transferList"><i class="fa fa-table fa-fw"></i>医疗废物转移计划</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.agreementListCz"><i class="fa fa-table fa-fw"></i>医疗废物处置协议确认</a>-->
+            <!--</li>-->
+            <!--<li ng-class="{active:collapseVar==3}">-->
+                <!--<a href="" ng-click="check(3)"><i class="fa fa-files-o fa-fw"></i>审批功能<span class="fa arrow"></span></a>-->
+                <!--<ul class="nav nav-second-level" collapse="collapseVar!=3">-->
+                    <!--<li ng-class="{active: selectedMenu=='blank'}">-->
+                        <!--<a ui-sref="dashboard.unfinishedTaskList">待办业务</a>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<a ui-sref="dashboard.finishedTaskList">已办业务</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <!--&lt;!&ndash; /.nav-second-level &ndash;&gt;-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.roleList"><i class="fa fa-table fa-fw"></i>角色维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">-->
+                <!--<a ui-sref="dashboard.menu"><i class="fa fa-table fa-fw"></i>菜单维护</a>-->
+            <!--</li>-->
+            <!--<li ui-sref-active="active">
+                <a ui-sref="dashboard.home"><i class="fa fa-dashboard fa-fw"></i> 组织管理<span
+                        class="fa arrow"></span></a>-->
+            <!--<li ng-class="{active: collapseVar==5}">{{dropDown}}
+                <a href="" ng-click="check(5)"><i class="fa fa-cog fa-fw"></i>组织维护<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=5">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.org-manage">公司-部门维护</a>
+                    </li>
+                </ul>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.application-management"><i class="fa fa-table fa-fw"></i> 功能管理</a>
+            </li>
+            <li ng-class="{active: collapseVar==6}">{{dropDown}}
+                <a href="" ng-click="check(6)"><i class="fa fa-cog fa-fw"></i>角色管理<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=6">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.role-management">角色维护</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.rolelist">角色-功能维护</a>
+                    </li>
+                </ul>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.menu-management"><i class="fa fa-table fa-fw"></i> 菜单管理</a>
+            </li>
+            <li ng-class="{active: collapseVar==7}">{{dropDown}}
+                <a href="" ng-click="check(7)"><i class="fa fa-cog fa-fw"></i>人员管理<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=7">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.user-dep-company">人员-公司-部门维护</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.user-role">人员-角色维护</a>
+                    </li>
+                </ul>
+            </li>-->
+            <!--<li ui-sref-active="active">
+                <a ui-sref="dashboard.app-user-power"><i class="fa fa-table fa-fw"></i> 角色管理-用户功能权限</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.chart"><i class="fa fa-bar-chart-o fa-fw"></i> 图表测试<span></span></a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.table"><i class="fa fa-table fa-fw"></i> 表格测试</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.testdatatable"><i class="fa fa-table fa-fw"></i>表格数据测试</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.testTree"><i class="fa fa-table fa-fw"></i> 测试树</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.form"><i class="fa fa-edit fa-fw"></i> 表单测试</a>
+            </li>
+            <li ng-class="{active: collapseVar==1}">{{dropDown}}
+                <a href="" ng-click="check(1)"><i class="fa fa-wrench fa-fw"></i>用户界面元素测试<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=1">
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.panels-wells">Panels and Wells</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.buttons">Buttons</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.notifications">Notifications</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.typography">Typography</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.icons"> Icons</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="dashboard.grid">Grid</a>
+                    </li>
+                </ul>
+                &lt;!&ndash; /.nav-second-level &ndash;&gt;
+            </li>-->
+            <!--<li ng-class="{active: collapseVar==2}">
+                <a href="" ng-click="check(2)"><i class="fa fa-sitemap fa-fw"></i>多级下拉菜单测试<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=2">
+                    <li>
+                        <a href="">Second Level Item</a>
+                    </li>
+                    <li>
+                        <a href="">Second Level Item</a>
+                    </li>
+                    <li ng-init="third=!third" ng-class="{active: multiCollapseVar==3}">
+                        <a href="" ng-click="multiCheck(3)">Third Level <span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level" collapse="multiCollapseVar!=3">
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+                            <li>
+                                <a href="">Third Level Item</a>
+                            </li>
+
+                        </ul>
+                        &lt;!&ndash; /.nav-third-level &ndash;&gt;
+                    </li>
+                </ul>
+                &lt;!&ndash; /.nav-second-level &ndash;&gt;
+            </li>-->
+           <!-- <li ng-class="{active:collapseVar==4}">
+                <a href="" ng-click="check(4)"><i class="fa fa-files-o fa-fw"></i>示例页测试<span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" collapse="collapseVar!=4">
+                    <li ng-class="{active: selectedMenu=='blank'}">
+                        <a ui-sref="dashboard.blank" ng-click="selectedMenu='blank'">Blank Page</a>
+                    </li>
+                    <li>
+                        <a ui-sref="login">Login Page</a>
+                    </li>
+                </ul>
+                &lt;!&ndash; /.nav-second-level &ndash;&gt;
+            </li>
+            <li><a href="http://www.strapui.com/">Angular主题测试</a></li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.table2"><i class="fa fa-table fa-fw"></i> 表格测试2</a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="dashboard.test"><i class="fa fa-table fa-fw"></i>上传图片</a>
+            </li>-->
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+
+
+

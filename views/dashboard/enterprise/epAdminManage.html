@@ -1,0 +1,45 @@
+<div>
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">管理员信息维护</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row" ng-model="epInfo">
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-12">
+            <div class="dataTable_wrapper">
+                <label>管理员</label>
+                <table class="table table-bordered table-hover" id="adminTable">
+                    <tr ng-model="connectFlag">
+                        <th colspan="3"><a ng-click="adminAdd();" href="javascript:void(0);">添加</a></th>
+                    </tr>
+                    <tr ng-model="adminFlag">
+                        <th>名称</th>
+                        <th>密码</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr ng-repeat="x in adminData">
+                        <th class=""><input type="text" id="adminNameT{{x.sort}}" class="form-control" value="{{x.adminName}}" readonly="readonly"></th>
+                        <th class=""><input type="password" id="adminPwdT{{x.sort}}" class="form-control" value="{{x.adminPwd}}" readonly></th>
+                        <th ng-show="x.Flag"><a ng-click="adminManage(x.userId,'3');" id="j{{x.userId}}" ng-hide="hideDelBtn" style="padding-right: 15px" href="javascript:void(0);">禁用</a><a id="q{{x.userId}}" ng-click="adminManage(x.userId,'1');" ng-hide="hideDelBtn" style="padding-right: 15px" href="javascript:void(0);">启用</a><a ng-click="resetPwd(x.userId);" ng-hide="hideDelBtn" style="padding-right: 15px" href="javascript:void(0);">重置密码</a><a ng-click="createCodeInfo(x.userId,x.personId,x.adminName);" style="padding-right: 15px" href="javascript:void(0);">生成二维码</a><a ng-click="checkCodeInfo(x.personId,x.adminName);" style="padding-right: 15px" href="javascript:void(0);">查看二维码</a></th>
+                        <th ng-hide="x.Flag"><a id="delAdmin" ng-hide="hideDelBtn" href="javascript:void(0);">删除</a></th>
+                        <th class="hideth"><input type="text" id="adminUserIdT{{x.sort}}" class="form-control" value="{{x.userId}}"></th>
+                        <th class="hideth"><input type="text" id="adminPersonIdT{{x.sort}}" class="form-control" value="{{x.personId}}"></th>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button class="btn btn-default" ng-click="back();" id="backBtn" ng-show="backBtnFlag">返回</button>
+                <button class="btn btn-primary" ng-click="save();" id="saveBtn">保存</button>
+                <button class="btn btn-primary" ng-click="submit();" id="submitBtn">提交</button>
+                <button class="btn btn-primary" ng-click="check();" id="checkBtn" ng-show="checkBtnFlag">查看审批记录</button>
+            </div>
+        </div>
+        <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
+</div>

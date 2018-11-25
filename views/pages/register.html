@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">单位注册</h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>单位类型</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <select ng-model="enterpriseType" id="enterpriseType"
+                                                ng-options="x.type for x in types" class="form-control">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>单位全称</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="enterpriseName" class="form-control" placeholder="请输入单位全称（必填）"
+                                               name="enterpriseName" type="text" ng-model="enterpriseName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>统一社会信用代码</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="orgCode" class="form-control" placeholder="请输入统一社会信用代码（必填）"
+                                               name="orgCode" type="text" ng-model="orgCode">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>密码</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="pwd" class="form-control" placeholder="密码由5-18位大小写字母和数字组成（必填）"
+                                               name="pwd" type="password" ng-model="pwd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>确认密码</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                                    <div class="form-group">
+                                        <input id="repwd" class="form-control" placeholder="请确认密码" name="repwd"
+                                               type="password" ng-model="repwd">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                    <div class="form-group">
+                                        <label>验证码</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                    <div class="form-group">
+                                        <input id="checkCode" class="form-control" placeholder="请输入验证码（必填）"
+                                               name="checkCode" type="text" ng-model="checkCode">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                                    <div class="form-group">
+                                        <a ng-click="getCheckCode();" href="javascript:void(0);">
+                                            <img src="" id="imgCode" style="width: 100%;height: 33px;"/>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <div style="text-align:center">
+                                <button class="btn btn-default" ng-click="back();">返回</button>
+                                <button class="btn btn-primary" ng-click="submit();">确认</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>

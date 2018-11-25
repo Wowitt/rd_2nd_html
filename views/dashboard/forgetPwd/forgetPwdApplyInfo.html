@@ -1,0 +1,44 @@
+<div style="padding-bottom: 30px">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">找回密码审批</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- /.panel -->
+    <div class="row " ng-model="epInfo">
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>公司名称：{{epName}}</label>
+            </div>
+            <div class="form-group">
+                <label>统一社会信用码：{{orgCode}}</label>
+            </div>
+            <div class="form-group">
+                <label>申请人：{{applyName}}</label>
+            </div>
+            <div class="form-group">
+                <label>收件箱：{{acceptMail}}</label>
+            </div>
+            <div class="form-group">
+                <label>您的邮箱地址</label>
+                <input id="mail" class="form-control" placeholder="请输入发送邮件邮箱地址（必填）" name="mail" type="text" ng-model="mail">
+            </div>
+            <div class="form-group" ng-hide="pwdFlag">
+                <label>邮箱密码</label>
+                <input id="mailPwd" class="form-control" placeholder="请输入邮箱密码（必填）" name="mailPwd" type="password" ng-model="mailPwd">
+            </div>
+            <div class="form-group">
+                <label>发送内容</label>
+                <textarea class="form-control" rows="3" placeholder="" id="sendContent" ng-model="sendContent" readonly></textarea>
+            </div>
+            <div>
+                <button class="btn btn-default" ng-click="back();" id="backBtn">返回</button>
+                <button class="btn btn-primary" ng-click="disagree();" id="disagreeBtn">驳回</button>
+                <button class="btn btn-primary" ng-click="agree();" id="agreeBtn">同意并发送</button>
+            </div>
+        </div>
+    </div>
+</div>

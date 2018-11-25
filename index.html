@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="styles/index/style.css" rel='stylesheet' type='text/css'/>
+    <link href="styles/index/buttons.css" rel='stylesheet' type='text/css'/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>天津市医疗废物在线转移监管平台</title>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!----webfonts---->
+    <!----//webfonts---->
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/index/move-top.js"></script>
+    <script type="text/javascript" src="js/index/easing.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
+    <!-----768px-menu----->
+    <link type="text/css" rel="stylesheet" href="styles/index/jquery.mmenu.all.css"/>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('div.description').each(function () {
+                $(this).css('display', 'block');
+            });
+
+            $('div.content-top-grid').hover(function () {
+                $(this).children('.description').stop().fadeTo(500, 1);
+            }, function () {
+                $(this).children('.description').stop().fadeTo(500, 0);
+            });
+
+        });
+    </script>
+    <script type="text/javascript" src="js/index/jquery.mmenu.js"></script>
+    <script type="text/javascript">
+        //	The menu on the left
+        $(function () {
+            $('nav#menu-left').mmenu();
+        });
+    </script>
+    <!-----//768px-menu----->
+</head>
+<body>
+<!----start-image-slider---->
+<div class="myimg-bg" id="home">
+    <!-- start slider -->
+    <div>
+        <img class="webindexImg" src="images/index/webtitle.png"/>
+        <img class="webIndex" src="images/index/webIndex.png"/>
+        <img class="appImg" src="images/index/appImg.png"/>
+        <div class="mybtn">
+            <a href="#contact" class="button button-glow button-rounded button-highlight btnFirstPage">进入监管平台</a>
+            <a href="#services" class="button button-glow button-border button-rounded button-highlight">下载移动应用</a>
+        </div>
+    </div>
+    <!---slider---->
+    <link rel="stylesheet" href="styles/index/fwslider.css" media="all">
+    <script src="js/index/css3-mediaqueries.js"></script>
+    <script src="js/index/fwslider.js"></script>
+    <!---//slider---->
+    <!--/slider -->
+</div>
+<div class="clear"></div>
+<!----//End-image-slider---->
+<!----start-content--->
+<div class="content">
+    <div class="contact" id="contact" style="padding-bottom: 5%">
+        <div>
+            <img class="computerImg" src="images/index/computerImg.png"/>
+        </div>
+        <div>
+            <img class="webLogo" src="images/index/logo1.png"/>
+        </div>
+        <div style="align-content: center">
+            <p id="chineseWebtitle" class="chineseWebtitle">天津市医疗废物在线转移监管平台</p>
+            <p id="use" class="browserUse">当前浏览器可以正常访问本站，点击【登录】按钮进行登录！</p>
+            <p id="unuse" class="browserUse">请使用360安全浏览器(8.0以上版本)极速模式或360极速浏览器访问本站，点击【下载浏览器】按钮下载360浏览器！</p>
+            <a id="loginBtn" class="button button-border button-rounded browserBtnLogin" onclick="goLogin();">登录</a>
+            <a id="downloadBtn" href="http://se.360.cn/" target="_blank" class="button button-border button-rounded browserBtnDownload">下载浏览器</a>
+        </div>
+    </div>
+
+    <!---//End-contact---->
+    <!--- start-top-services-grids---->
+    <div class="downloadDiv" id="services">
+    </div>
+    <!--- //End-top-services-grids---->
+    <div class="top-grids" id="services1" style="background: #ffffff;">
+        <div class="wrap">
+            <div class="top-grid">
+                <a class="icon zhuanyi" href="apk/medical_transfer.apk"> </a>
+                <a href="apk/medical_transfer.apk">医废转移</a>
+            </div>
+            <div class="top-grid">
+                <a class="icon zhongzhuan" href="apk/transfer_conduits.apk"> </a>
+                <a href="apk/transfer_conduits.apk">医废&nbsp;·&nbsp;中转</a>
+            </div>
+            <div class="top-grid">
+                <a class="icon jianguan" href="apk/online_management.apk"> </a>
+                <a href="apk/online_management.apk">在线监管</a>
+            </div>
+            <div class="clear"> </div>
+        </div>
+        <!----start-scrooling-script---->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var defaults = {
+                    containerID: 'toTop', // fading element id
+                    containerHoverID: 'toTopHover', // fading element hover id
+                    scrollSpeed: 1200,
+                    easingType: 'linear'
+                };
+                $().UItoTop({easingType: 'easeOutQuart'});
+            });
+        </script>
+        <a href="#home" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"> </span></a>
+        <!----//End-scrooling-script---->
+    </div>
+    <!---start-contact---->
+    <div class="indexFooter">
+        <h3>Copyright © 2009-2017 天津市医疗废物在线转移监管平台</h3>
+    </div>
+</div>
+<!----//End-content--->
+<!----//End-wrap---->
+<script >
+    var explorer = window.navigator.userAgent ;
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        $("#use").hide();
+        $("#loginBtn").hide();
+    }else{
+        //ie
+        if (explorer.indexOf("MSIE") >= 0) {
+            $("#use").hide();
+            $("#loginBtn").hide();
+        }
+        //firefox
+        else if (explorer.indexOf("Firefox") >= 0) {
+            $("#unuse").hide();
+            $("#downloadBtn").hide();
+        }
+        //Chrome
+        else if(explorer.indexOf("Chrome") >= 0){
+            $("#unuse").hide();
+            $("#downloadBtn").hide();
+        }
+        //Opera
+        else if(explorer.indexOf("Opera") >= 0){
+            $("#use").hide();
+            $("#loginBtn").hide();
+        }
+        //Safari
+        else if(explorer.indexOf("Safari") >= 0){
+            $("#unuse").hide();
+            $("#downloadBtn").hide();
+        }
+        //UCBrowser
+        else if(explorer.indexOf("UCBrowser") >= 0){
+            $("#unuse").hide();
+            $("#downloadBtn").hide();
+        }
+        else{
+            $("#use").hide();
+            $("#loginBtn").hide();
+        }
+    }
+
+    var result = {};
+    if (!!window.ActiveXObject || "ActiveXObject" in window) {
+        var rmsie = /(msie) ([\w.]+)/;
+        var ua = navigator.userAgent.toLowerCase();
+        var match = rmsie.exec(ua)
+        if (match && match.length > 0) {
+            result = { browser: match[1] || "", version: match[2] || "0" };
+        }
+    }else {
+        //ie
+        if (explorer.indexOf("MSIE") < 0) {
+            result = {"version":"10"};
+        }
+    }
+    var version = parseFloat(result.version);
+    if(result.version != undefined && version > 8.0){
+        document.write('<script type="text/javascript" src="js/index/typed.js"><\/script>');
+    }
+
+    function goLogin(){
+        var currentUrl = window.location.href;
+        var url = "";
+        if(currentUrl.indexOf("/index.html")>0){
+            url = currentUrl.split("/index.html")[0] + "/main.html#/login";
+        }else{
+            url = currentUrl + "main.html#/login";
+        }
+        window.location.href = url;
+    }
+
+</script>
+</body>
+</html>
+
