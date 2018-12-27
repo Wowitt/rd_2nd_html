@@ -76,7 +76,7 @@ angular.module('sbAdminApp').controller('TransferInfoCtrl', ['$scope','Init','Mo
             $scope.open($scope.content);
             return;
         }
-        var patrn=/^0\d{2,3}-\d{7,8}(-\d{1,6})?$/;
+        var patrn=/^([0-9]{3,4}-)?[0-9]{7,8}$/;
         if (!patrn.exec($("#LINKTEL").val())){
             $scope.open("请输入正确座机号！");
             return;
@@ -130,7 +130,7 @@ angular.module('sbAdminApp').controller('TransferInfoCtrl', ['$scope','Init','Mo
             $scope.open($scope.content);
             return;
         }
-        var patrn=/^0\d{2,3}-\d{7,8}(-\d{1,6})?$/;
+        var patrn=/^([0-9]{3,4}-)?[0-9]{7,8}$/;
         if (!patrn.exec($("#LINKTEL").val())){
             $scope.open("请输入正确座机号！");
             return;
