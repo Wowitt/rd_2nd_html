@@ -148,7 +148,7 @@ angular.module('sbAdminApp').controller('AgreementInfoCtrl', ['$rootScope','$sco
             return;
         }
         //var patrn = /^(([1-9]+)|([0-9]+\.[0-9]{0,3}))$/;
-        var patrn = /^(([0-9]+\.[0-9]{0,1}[1-9][0-9]{0,2})|([0-9]*[1-9][0-9]*\.[0-9]{0,3})|([0-9]{0,1}[1-9][0-9]{0,2}))$/;
+        var patrn = /^[1-9]\d{0,6}(?:|\.\d{0,6})$/;
         if(!patrn.exec($("#UNIT_NUM").val())){
             $scope.open("您输入的计划转移医疗废物数量格式不正确，请重新输入");
             return;
@@ -245,7 +245,7 @@ angular.module('sbAdminApp').controller('AgreementInfoCtrl', ['$rootScope','$sco
             return;
         }
         //var patrn = /^(([1-9]+)|([0-9]+\.[0-9]{0,3}))$/;
-        var patrn = /^(([0-9]+\.[0-9]{0,1}[1-9][0-9]{0,2})|([0-9]*[1-9][0-9]*\.[0-9]{0,3})|([0-9]{0,1}[1-9][0-9]{0,2}))$/;
+        var patrn = /^[1-9]\d{0,6}(?:|\.\d{0,6})$/;
         if(!patrn.exec($("#UNIT_NUM").val())){
             $scope.open("您输入的计划转移医疗废物数量格式不正确，请重新输入");
             return;

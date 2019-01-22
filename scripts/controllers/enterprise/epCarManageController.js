@@ -299,7 +299,7 @@ angular.module('sbAdminApp').controller('EpCarManageCtrl', ['$rootScope', '$scop
                         return;
                     }
                     //var patrn = /^(([1-9]+)|([0-9]+\.[0-9]{0,3}))$/;
-                    var patrn = /^(([0-9]+\.[0-9]{0,1}[1-9][0-9]{0,2})|([0-9]*[1-9][0-9]*\.[0-9]{0,3})|([0-9]{0,1}[1-9][0-9]{0,2}))$/;
+                    var patrn = /^[1-9]\d{0,6}(?:|\.\d{0,6})$/;
                     if (!patrn.exec(cars[index2].tare)) {
                         $scope.content = "您输入的皮重格式不对，请重新输入";
                         $scope.open($scope.content);
