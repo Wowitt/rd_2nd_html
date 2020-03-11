@@ -66,6 +66,10 @@
                 </div>
             </div>
             <div class="form-group" ng-show="showFlag">
+                <label>床位(单位个)</label>
+                <input id="berthNum" class="form-control" placeholder="" name="berthNum" type="text" ng-model="berthNum" readonly="readonly">
+            </div>
+            <div class="form-group" ng-show="showFlag">
                 <label>医疗机构等级</label>
                 <select ng-model="step" id="step" ng-options="x.grade for x in hospitalGradeList" class="form-control" disabled="disabled">
                 </select>

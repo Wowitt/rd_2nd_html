@@ -80,6 +80,10 @@
                 </div>
             </div>
             <div class="form-group" ng-hide="carFlag">
+                <label>床位(单位个)</label>
+                <input id="berthNum" class="form-control" placeholder="" name="berthNum" type="number" ng-model="berthNum" >
+            </div>
+            <div class="form-group" ng-hide="carFlag">
                 <label>医疗机构等级</label>
                 <select ng-model="step" id="step" ng-options="x.grade for x in hospitalGradeList" class="form-control">
                 </select>

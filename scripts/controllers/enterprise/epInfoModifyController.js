@@ -117,6 +117,7 @@ angular.module('sbAdminApp').controller('EnterpriseModifyCtrl', ['$rootScope','$
             $scope.eMail = data.epInfo.eMail;
             $scope.longitude = data.epInfo.longitude;
             $scope.latitude = data.epInfo.latitude;
+            $scope.berthNum = parseInt(data.epInfo.berthNum);
             if(data.epInfo.step != null && !angular.equals("",data.epInfo.step)){
                 for(var i=0;i<$scope.hospitalGradeList.length;i++){
                     if(angular.equals($scope.hospitalGradeList[i].value,data.epInfo.step)){
@@ -363,6 +364,7 @@ angular.module('sbAdminApp').controller('EnterpriseModifyCtrl', ['$rootScope','$
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:$("#berthNum").val(),
                     step:$scope.step.value,
                     orgType:$scope.orgTypeValue,
                     belongOrg:$scope.belongOrg.value
@@ -389,6 +391,7 @@ angular.module('sbAdminApp').controller('EnterpriseModifyCtrl', ['$rootScope','$
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:"",
                     step:$scope.step.value,
                     orgType:"",
                     belongOrg:""
@@ -588,6 +591,7 @@ angular.module('sbAdminApp').controller('EnterpriseModifyCtrl', ['$rootScope','$
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:$("#berthNum").val(),
                     step:$scope.step.value,
                     orgType:$scope.orgTypeValue,
                     belongOrg:$scope.belongOrg.value
@@ -614,6 +618,7 @@ angular.module('sbAdminApp').controller('EnterpriseModifyCtrl', ['$rootScope','$
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:"",
                     step:$scope.step.value,
                     orgType:"",
                     belongOrg:""

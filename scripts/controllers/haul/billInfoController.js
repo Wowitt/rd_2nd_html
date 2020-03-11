@@ -9,6 +9,7 @@ angular.module('sbAdminApp').controller('BillInfoCtrl', ['$scope','Init','Modal'
         $state.go("dashboard.index");
         return;
     }
+    $scope.userType = "";
     //弹框参数
     var resolve = {};
     var url = "";
@@ -21,10 +22,12 @@ angular.module('sbAdminApp').controller('BillInfoCtrl', ['$scope','Init','Modal'
         $scope.epCzName = data.bill.EN_NAME_CZ;
         $scope.totalNum = data.bill.COUNT;
         $scope.boxIds = data.bill.boxList;
+        $scope.userType = data.userType
         if($scope.boxIds != null && $scope.boxIds.length > 0){
             $scope.boxFlag = true;
         }
         $scope.weight = data.bill.weight;
+        $scope.weightstatus = data.bill.weightstatus;
         if($scope.weight > 0){
             $scope.boxFlag = false;
         }else{
@@ -56,4 +59,15 @@ angular.module('sbAdminApp').controller('BillInfoCtrl', ['$scope','Init','Modal'
 
         });
     };
+
+    //请求后台
+    $scope.doneForWeight = function (){
+        Init.iwbhttp('/transfer/doneForWeight',{"TB_ID":$stateParams.TB_ID}, function (data, header, config, status) {
+            if (data.resFlag == 0) {
+                $scope.weightstatus = '1'
+            } 
+            $scope.open(data.msg);
+        }, function (data, header, config, status) {
+        });
+    }
 }]);

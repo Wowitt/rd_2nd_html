@@ -65,7 +65,8 @@
                     废物信息
                 </div>
                 <div class="panel-body">
-                    <p>总计：{{weight}}公斤</p>
+                    <div style="float:left;margin-right: 18px;line-height: 30px;">总计：{{weight}}公斤 {{weightstatus=='1' ? "已处理":"未处理"}}</div>
+                    <button ng-if="userType == 'epAdminCz' && weightstatus != '1' " class="btn btn-success btn-sm" ng-click="doneForWeight();" id="backBtn">确认处置</button>
                 </div>
             </div>
         </div>

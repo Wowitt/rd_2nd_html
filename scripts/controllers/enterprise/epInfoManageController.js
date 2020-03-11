@@ -83,6 +83,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
     $scope.checkBtnFlag = false;
     //返回按钮和查看审批过程按钮是否显示
     $scope.backBtnFlag = false;
+    $scope.berthNum = 0;
     if($stateParams.from != null && $stateParams.from != ""){
         $scope.backBtnFlag = true;
     }
@@ -146,6 +147,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
             $scope.eMail = data.epInfo.eMail;
             $scope.longitude = data.epInfo.longitude;
             $scope.latitude = data.epInfo.latitude;
+            $scope.berthNum = parseInt(data.epInfo.berthNum);
             if(data.epInfo.step != null && !angular.equals("",data.epInfo.step)){
                 for(var i=0;i<$scope.hospitalGradeList.length;i++){
                     if(angular.equals($scope.hospitalGradeList[i].value,data.epInfo.step)){
@@ -858,6 +860,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:$("#berthNum").val(),
                     step:$scope.step.value,
                     orgType:$scope.orgTypeValue,
                     belongOrg:$scope.belongOrg.value
@@ -886,6 +889,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:"",
                     step:$scope.step.value,
                     orgType:"",
                     belongOrg:""
@@ -1300,6 +1304,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:$("#berthNum").val(),
                     step:$scope.step.value,
                     orgType:$scope.orgTypeValue,
                     belongOrg:$scope.belongOrg.value
@@ -1328,6 +1333,7 @@ angular.module('sbAdminApp').controller('EnterpriseManageCtrl', ['$scope','Init'
                     eMail:$("#eMail").val(),
                     longitude:$("#longitude").val(),
                     latitude:$("#latitude").val(),
+                    berthNum:"",
                     step:$scope.step.value,
                     orgType:"",
                     belongOrg:""

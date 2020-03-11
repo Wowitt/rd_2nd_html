@@ -111,6 +111,7 @@ angular.module('sbAdminApp').controller('ApproveEpInfoTransitionCtrl', ['$scope'
                 $scope.eMail = data.epInfo.eMail;
                 $scope.longitude = data.epInfo.longitude;
                 $scope.latitude = data.epInfo.latitude;
+                $scope.berthNum = data.epInfo.berthNum;
                 if(data.epInfo.step != null && !angular.equals("",data.epInfo.step)){
                     for(var i=0;i<$scope.hospitalGradeList.length;i++){
                         if(angular.equals($scope.hospitalGradeList[i].value,data.epInfo.step)){
